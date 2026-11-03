@@ -63,24 +63,24 @@ const competition = {
  */
 
 const firstStageResults = [
-    { rank: 1, name: "تیم رتبه اول", minutes: 18 },
-    { rank: 2, name: "NEON PHOENIX", minutes: 21, isOurTeam: true },
-    { rank: 3, name: "تیم رتبه سوم", minutes: 23 },
-    { rank: 4, name: "تیم رتبه چهارم", minutes: 25 },
-    { rank: 5, name: "تیم رتبه پنجم", minutes: 28 },
-    { rank: 6, name: "تیم رتبه ششم", minutes: 30 },
-    { rank: 7, name: "تیم رتبه هفتم", minutes: 33 },
-    { rank: 8, name: "تیم رتبه هشتم", minutes: 36 },
-    { rank: 9, name: "تیم رتبه نهم", minutes: 40 },
-    { rank: 10, name: "تیم رتبه دهم", minutes: 44 }
+    { rank: 1, name: "ALGORITHM TITANS", minutes: 18 },
+    { rank: 2, name: "INFINITY LOOP", minutes: 21, isOurTeam: true },
+    { rank: 3, name: "BYTE WARRIORS", minutes: 23 },
+    { rank: 4, name: "CODE VANGUARD", minutes: 25 },
+    { rank: 5, name: "NEON PHOENIX", minutes: 28 },
+    { rank: 6, name: "BINARY LEGENDS", minutes: 30 },
+    { rank: 7, name: "CYBER PULSE", minutes: 33 },
+    { rank: 8, name: "DEBUG ELITE", minutes: 36 },
+    { rank: 9, name: "QUANTUM MINDS", minutes: 40 },
+    { rank: 10, name: "STACK OVERFLOW", minutes: 44 }
 ];
 
 const secondStageResults = [
-    { rank: 1, name: "تیم رتبه اول", minutes: 21 },
-    { rank: 2, name: "تیم رتبه دوم", minutes: 25 },
-    { rank: 3, name: "NEON PHOENIX", minutes: 27, isOurTeam: true },
-    { rank: 4, name: "تیم رتبه چهارم", minutes: 31 },
-    { rank: 5, name: "تیم رتبه پنجم", minutes: 35 }
+    { rank: 1, name: "ALGORITHM TITANS", minutes: 21 },
+    { rank: 2, name: "QUANTUM MINDS", minutes: 25 },
+    { rank: 3, name: "INFINITY LOOP", minutes: 27, isOurTeam: true },
+    { rank: 4, name: "BYTE WARRIORS", minutes: 31 },
+    { rank: 5, name: "NEON PHOENIX", minutes: 35 }
 ];
 /* دستاوردهای تیم NEON PHOENIX */
 
