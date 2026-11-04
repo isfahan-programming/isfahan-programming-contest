@@ -6,7 +6,7 @@ const competition = {
     trackingCode: "ISF-1405-NPX7",
 
     team: {
-        name: "NEON PHOENIX",
+         name: "INFINITY LOOP",
         slogan: "سه ذهن، یک هدف، بی‌نهایت راه‌حل",
 
         members: [
@@ -64,7 +64,7 @@ const competition = {
 
 const firstStageResults = [
     { rank: 1, name: "ALGORITHM TITANS", minutes: 18 },
-    { rank: 2, name: "INFINITY LOOP", minutes: 21, isOurTeam: true },
+   { rank: 2, name: "INFINITY LOOP", minutes: 21 },
     { rank: 3, name: "BYTE WARRIORS", minutes: 23 },
     { rank: 4, name: "CODE VANGUARD", minutes: 25 },
     { rank: 5, name: "NEON PHOENIX", minutes: 28 },
@@ -78,7 +78,7 @@ const firstStageResults = [
 const secondStageResults = [
     { rank: 1, name: "ALGORITHM TITANS", minutes: 21 },
     { rank: 2, name: "QUANTUM MINDS", minutes: 25 },
-    { rank: 3, name: "INFINITY LOOP", minutes: 27, isOurTeam: true },
+   { rank: 3, name: "INFINITY LOOP", minutes: 27 },
     { rank: 4, name: "BYTE WARRIORS", minutes: 31 },
     { rank: 5, name: "NEON PHOENIX", minutes: 35 }
 ];
@@ -407,6 +407,8 @@ membersGrid.append(card);
 
 /* ساخت جدول نتایج هر مرحله */
 
+/* ساخت جدول نتایج هر مرحله */
+
 function renderLeaderboard(results, targetBody) {
     if (!targetBody) return;
 
@@ -415,11 +417,9 @@ function renderLeaderboard(results, targetBody) {
     results.forEach((team) => {
         const row = createElement("tr");
 
-        if (team.isOurTeam) {
-            row.classList.add("our-team-row");
-        }
-
+        // رتبه تیم
         const rankCell = createElement("td");
+
         const rankBadge = createElement(
             "span",
             "rank-number",
@@ -436,40 +436,39 @@ function renderLeaderboard(results, targetBody) {
 
         rankCell.append(rankBadge);
 
+        // نام تیم؛ بدون مشخص کردن تیم خودمان
         const nameCell = createElement("td", "team-name-cell");
 
         nameCell.append(
             createElement("span", "", team.name)
         );
 
-        if (team.isOurTeam) {
-            nameCell.append(
-                createElement(
-                    "span",
-                    "team-mini-badge",
-                    "تیم ما"
-                )
-            );
-        }
+        // زمان ثبت‌شده
+        const timeCell = createElement("td", "time-cell");
 
-      const timeCell = createElement("td", "time-cell");
+        timeCell.textContent =
+            typeof team.minutes === "number"
+                ? `${team.minutes} دقیقه`
+                : "زمان اعلام نشده";
 
-timeCell.textContent =
-    typeof team.minutes === "number"
-        ? `${team.minutes} دقیقه`
-        : "زمان اعلام نشده";
+        // وضعیت یکسان برای تمام تیم‌ها
+        const statusCell = createElement("td");
 
-const statusCell = createElement("td");
+        const status = createElement(
+            "span",
+            "result-status",
+            "ثبت زمان"
+        );
 
-const status = createElement(
-    "span",
-    "result-status",
-    team.isOurTeam ? "تیم ما" : "ثبت زمان"
-);
+        statusCell.append(status);
 
-statusCell.append(status);
+        row.append(
+            rankCell,
+            nameCell,
+            timeCell,
+            statusCell
+        );
 
-        row.append(rankCell, nameCell, timeCell, statusCell);
         targetBody.append(row);
     });
 }
